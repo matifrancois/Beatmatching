@@ -73,13 +73,6 @@ def psola(sample, peaks, scale):
     return new_signal
 
 
-def get_periods(sample):
-    freqs = np.fft.fft(sample)
-
-    #freqs[20000:len(freqs)] = 0
-
-    y = np.fft.ifft(freqs).real
-
-    peaks, properties = sps.find_peaks(y)
-
+def get_pitch_marks(sample):
+    peaks, _ = sps.find_peaks(sample)
     return peaks
