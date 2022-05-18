@@ -3,9 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as sps
 import soundfile as sf
-from IPython.display import Audio
-from modified_psola import modified_psola
-from detect_pitch import get_fundamental_frequency
+from .bpm_detector import bpm_detector
 
 def LPC_process(x, fs, order, window_time=None):
     """
@@ -37,7 +35,6 @@ def LPC_rebuild(error_signal, coefs):
     return sps.lfilter([1], coefs, error_signal)
 
 
-# Originally PSOLA2
 def psola(sample, peaks, scale):
     new_signal = np.zeros(int(len(sample)*scale)+10)
     overlap = 0.5
@@ -76,3 +73,7 @@ def psola(sample, peaks, scale):
 def get_pitch_marks(sample):
     peaks, _ = sps.find_peaks(sample)
     return peaks
+
+def get_bpm(track, fs):
+    bpm, _ = bpm_detector(track, fs)
+    return bpm[0]
