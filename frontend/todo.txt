@@ -1,0 +1,3 @@
+solucionar problema de cache del reproductor de audio (por ahora solo funciona si en el menú F12 se selecciona en network disable cache)
+
+señalizar de alguna manera cual cancion está siendo seleccionada
