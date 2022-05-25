@@ -1,0 +1,1 @@
+falta sacar el hardcodeo del numero de relación de BPM con un detector de BPMs
