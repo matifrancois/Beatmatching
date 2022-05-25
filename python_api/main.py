@@ -34,7 +34,7 @@ songs_names = [
     "path": "daniela_andrade",
     "title": "Crazy Daniela Andrade",
     "image_path": "https://i.scdn.co/image/ab67616d00001e0229455064ffc25216a8a576b2",
-    "bpm": 99,
+    "bpm": 94,
   },
   {
     "id": 2,
@@ -164,16 +164,12 @@ def get_mix(song_1: str, song_2: str, f_second: int, time_to_switch: int, attenu
     for i in range(len(output)- len(z[0])):
         output[i+first_second*sr] = output[i+first_second*sr] / (2**(i*pendiente_del_log)) + a[i] / (2**(
                 (samples_to_switch-i)*pendiente_del_log))
-    # print(len(output))
-    # print(len(a))
-    # print(len(x))
-    # for i in range(900000):
-    #     output[first_second*sr + samples_to_switch + i + 1] = a[samples_to_switch + i]
+
     output = np.concatenate((output, a[len(output)- len(z[0]):]))
 
     ##### Here we write the correspondent file and return a message to indicate that every works fine ######
 
-    sf.write("../frontend/public/results.wav", output, sr)
+    sf.write("../frontend/src/sounds/results.wav", output, sr)
 
     return {"song1": song_1, "song2": song_2, "f_second": f_second, "time_to_switch": time_to_switch, "attenuation": attenuation}
 
