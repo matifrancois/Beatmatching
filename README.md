@@ -1,4 +1,20 @@
-# Beatmatching
+<h1 align="center">
+  <br>
+  <img src="Images/note.png" alt="Beatmatching" width="100">
+  <br>
+  Beatmatching
+  <br>
+</h1>
+<h4 align="center">An application made with <a href="https://flutter.dev/" target="_blank">FastApi and ReactJS</a></h4>
+
+
+<p align="center">
+  • <a href="#what-is-it">What is it</a> 
+  • <a href="#preview">Preview</a> 
+  • <a href="#getting-started">Getting Started</a> 
+</p>
+
+## What is it
 
 This repository contains an application that consist in a frontend that allow the user to select two music from a list of titles and then play the song that mix them with a smooth transition between them. 
 
