@@ -1,1 +1,2 @@
-falta sacar el hardcodeo del numero de relación de BPM con un detector de BPMs
+- Make an automatic BPM counter for each song.
+- Use a database for the songs instead of leaving them in the src folder of the api
